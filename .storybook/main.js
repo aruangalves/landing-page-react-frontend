@@ -7,10 +7,19 @@ const config = {
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
+    '@storybook/addon-themes'
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
+  core: {
+    builder: {
+      name: '@storybook/builder-vite',
+      options: {
+        viteConfigPath: './vite.config.js'
+      }
+    }
+  }
 };
 export default config;
