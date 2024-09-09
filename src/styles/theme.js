@@ -28,6 +28,9 @@ export const theme = {
   spacings: {
     gap: '3rem',
   },
+  media: {
+    ltemedium: '(max-width: 768px)'
+  }
 };
 
 //'#0A1128' deep navy blue
