@@ -2,10 +2,11 @@ export const theme = {
   colors: {
     mainBg: 'red',
     secondaryBg: 'blue',
-    lightBg: '#FFFFFF',
+    lightBg: '#FAF9F6',
     darkBg: '#0A1128',
     primaryColor: '#0A1128',
     secondaryColor: '#dc143c',
+    mediumGray: '#dddddd',
   },
   font: {
     family: {
