@@ -6,8 +6,8 @@ export default {
   args: {
     title: 'Grid two columns',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa labore, sint quam cum veniam iste aspernatur veritatis delectus iure nam nobis, pariatur dicta quidem odio quas ducimus odit quia soluta.',
-    imgSrc: 'vite.svg',
-    background: false,
+    imgSrc: 'javascript.svg',
+    background: true,
   },
   argTypes: {
     title: {type: 'string',},
