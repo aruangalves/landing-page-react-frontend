@@ -27,7 +27,9 @@ export const theme = {
     },
   },
   spacings: {
+    mediumgap: '2.4rem',
     gap: '3rem',
+    xhugegap: '6.4rem',
   },
   media: {
     ltemedium: '(max-width: 768px)'
