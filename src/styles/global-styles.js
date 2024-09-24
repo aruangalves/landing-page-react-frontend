@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%; //rough conversion to pixel size
+    scroll-behavior: smooth;
   }
 
   body {
