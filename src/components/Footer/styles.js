@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components';
 export const Container = styled.footer`
   ${( props ) => css`
     text-align: center;
+    border-top: 0.1rem solid ${props.theme.colors.mediumGray};
 
     a {
       text-decoration: none;
