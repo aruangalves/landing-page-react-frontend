@@ -23,6 +23,7 @@ export const Container = styled.header`
     }
 
     @media ${props.theme.media.ltemedium}{
+      position: fixed;
       height: 100vh;
       display: grid;
       grid-template-columns: 1fr;
