@@ -7,7 +7,6 @@ const menuVisible = () => css`
 
 export const Container = styled.header`
   ${( props ) => css`
-    position: fixed;
     z-index: 5;
     top: 0;
     left: 0;

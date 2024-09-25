@@ -14,5 +14,10 @@ export const Container = styled.footer`
     a:hover {
       text-decoration: underline;
     }
+
+    & > div{
+      padding: 0;
+    }
+
   `};
 `;
