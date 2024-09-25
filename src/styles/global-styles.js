@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
-    margin: ${({theme}) => theme.spacings.mediumgap} 0;
+    margin: ${({theme}) => theme.spacings.mediumgap} auto;
   }
 
   ul, ol {

@@ -1,5 +1,7 @@
 import styled, {css} from 'styled-components';
 
+import { Title as HeadingContainer } from '../Heading/styles';
+
 export const Container = styled.div`
   ${(/* props */) => css``};
 `;
@@ -11,16 +13,21 @@ export const ContainerGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${props.theme.spacings.gap};
     margin-top: ${props.theme.spacings.xhugegap};
+
+    @media ${props.theme.media.ltemedium} {
+      grid-template-columns: 1fr;
+    }
   `};
 `;
 
 export const GridElement = styled.div`
   ${( props ) => css`
-  :first-child{
+  ${HeadingContainer}{
+    display: inline-block;
     position: relative;
     left: 5rem;
   }
-  :first-child::before{
+  ${HeadingContainer}::before{
     counter-increment: grid-counter;
     content: counter(grid-counter);
     position: absolute;
