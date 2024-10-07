@@ -142,7 +142,7 @@ export const mapSectionContent = (section = {}) => {
 
 export const mapTextGrid = (section = {}) => {
   const {
-    __component: component = '',
+    __component: component = 'section.section-grid-text',
     title = '',
     description = '',
     text_grid: grid = [],
@@ -154,6 +154,43 @@ export const mapTextGrid = (section = {}) => {
     title,
     description,
     grid,
+    background,
+    sectionId,
+  };
+};
+
+/*
+  "image_grid": [
+    {
+      "id": "123",
+      "image": {
+        "id": "456",
+        "name": "https://link.to.image.url",
+        "alternativeText": "your alt text",
+      },
+    }
+  ]
+  Should map each grid element to: alternativeText => altText & name => imgSrc
+*/
+
+export const mapImageGrid = (section = {}) => {
+  const {
+    __component: component = 'section.section-grid-image',
+    title = '',
+    description = '',
+    image_grid: grid = [],
+    metadata : { background = false, section_id: sectionId = ''},
+  } = section;
+
+  return {
+    component,
+    title,
+    description,
+    grid: grid.map((item) => {
+      const {image: { name: imgSrc = '', alternativeText: altText = ''} = ''} = item;
+
+      return {imgSrc, altText};
+    }),
     background,
     sectionId,
   };
