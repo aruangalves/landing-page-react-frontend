@@ -7,7 +7,15 @@ export const mapSections = (sections = []) => {
       return mapSectionContent(section);
     }
     else if(section.__component === 'section.section-grid'){
-      return mapSectionGrid(section);
+      const { text_grid = [], image_grid = []} = section;
+
+      if(text_grid.length > 0){
+        return mapTextGrid(section);
+      }
+
+      if(image_grid.length > 0){
+        //return mapImageGrid(section);
+      }
     }
 
     return section;
@@ -99,6 +107,54 @@ export const mapSectionContent = (section = {}) => {
   };
 };
 
-export const mapSectionGrid = (section = {}) => {
-  return section;
+/*
+  {
+    "id": 1,
+    "__component": "section.section-grid",
+    "title": "MY GRID",
+    "description": "A brief description.\n\n",
+    "text_grid": [
+      {
+        "id": 1,
+        "title": "Test #1",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
+      },
+      {
+        "id": 2,
+        "title": "Test #2",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
+      },
+      {
+        "id": 3,
+        "title": "Test #3",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
+      }
+    ],
+    "image_grid": [],
+    "metadata": {
+      "id": 2,
+      "name": "grid-one",
+      "section_id": "grid-one",
+      "background": true
+    }
+  }
+*/
+
+export const mapTextGrid = (section = {}) => {
+  const {
+    __component: component = '',
+    title = '',
+    description = '',
+    text_grid: grid = [],
+    metadata : { background = true, section_id: sectionId = ''},
+  } = section;
+
+  return {
+    component,
+    title,
+    description,
+    grid,
+    background,
+    sectionId,
+  };
 };
