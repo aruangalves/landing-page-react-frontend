@@ -7,14 +7,17 @@ export const mapSections = (sections = []) => {
       return mapSectionContent(section);
     }
     else if(section.__component === 'section.section-grid'){
-      const { text_grid = [], image_grid = []} = section;
+      const {text_grid = []} = section;
 
       if(text_grid.length > 0){
         return mapTextGrid(section);
       }
+    }
+    else if(section.__component === 'section-grid-gallery'){
+      const {image_grid = []} = section;
 
       if(image_grid.length > 0){
-        //return mapImageGrid(section);
+        return mapImageGrid(section);
       }
     }
 
