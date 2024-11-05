@@ -26,29 +26,6 @@ export const mapSections = (sections = []) => {
 };
 
 /**
-{
-  "__component": "section.section-two-columns",
-  "title": "JANUARY BRINGS US FIREFOX 85",
-  "description": "To wrap up January, we are proud to bring you the release of Firefox 85. In this version we are bringing you support for the :focus-visible pseudo-class in CSS and associated devtools, and the complete removal of Flash support from Firefox.\n\n",
-  "image": {
-    "data": {
-      "id": 4,
-      "attributes": {
-        "name": "javascript.svg",
-        "alternativeText": "javascript.svg",
-        "caption": "javascript.svg",
-        "url": "https://res.cloudinary.com/deosirvhi/image/upload/v1651926290/javascript_8c37407653.svg",
-      }
-    }
-  },
-  "metadata": {
-    "section_id": "home",
-    "background": true
-  }
-},
- */
-
-/**
  *GridTwoColumns.propTypes = {
   title: P.string.isRequired,
   text: P.string.isRequired,
@@ -63,7 +40,7 @@ export const mapSectionTwoColumns = (section = {}) => {
     __component: component = '',
     title = '',
     description: text = '',
-    image: { url: imgSrc = ''},
+    image: { data: { attributes: {url: imgSrc = ''}}},
     metadata: { background = false, section_id: sectionId = '' },
   } = section;
 
@@ -77,27 +54,12 @@ export const mapSectionTwoColumns = (section = {}) => {
   };
 };
 
-/*
-  {
-    "id": 3,
-    "__component": "section.section-content",
-    "title": "NEWS COVERAGE AND SOME SURPRISES",
-    "content": "The release of **Apple Silicon-based** Macs at the end of last year generated a flurry of news coverage and some surprises at the machine’s _performance_. This post details some background information on the <u>experience</u> of porting Firefox to run natively on these CPUs.\n\nWe’ll start with some background on the Mac transition and give an overview of Firefox internals that needed to know about the new architecture, before moving on to the concept of Universal Binaries.\n\nWe’ll then explain how DRM/EME works on the new platform, talk about our experience with macOS Big Sur, and discuss various updater problems we had to deal with. We’ll conclude with the release and an overview of various other improvements that are in the pipeline.\n\n",
-    "metadata": {
-      "id": 7,
-      "name": "intro",
-      "section_id": "intro",
-      "background": false
-    }
-  },
- */
-
 export const mapSectionContent = (section = {}) => {
 
   const {
     __component: component = '',
     title = '',
-    content: htmlcontent = '',
+    description: htmlcontent = '',
     metadata: { background = false, section_id: sectionId = ''},
   } = section;
 
@@ -110,42 +72,9 @@ export const mapSectionContent = (section = {}) => {
   };
 };
 
-/*
-  {
-    "id": 1,
-    "__component": "section.section-grid",
-    "title": "MY GRID",
-    "description": "A brief description.\n\n",
-    "text_grid": [
-      {
-        "id": 1,
-        "title": "Test #1",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
-      },
-      {
-        "id": 2,
-        "title": "Test #2",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
-      },
-      {
-        "id": 3,
-        "title": "Test #3",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores.\n\n"
-      }
-    ],
-    "image_grid": [],
-    "metadata": {
-      "id": 2,
-      "name": "grid-one",
-      "section_id": "grid-one",
-      "background": true
-    }
-  }
-*/
-
 export const mapTextGrid = (section = {}) => {
   const {
-    __component: component = 'section.section-grid-text',
+    __component: component = 'section.section-grid',
     title = '',
     description = '',
     text_grid: grid = [],
@@ -166,23 +95,9 @@ export const mapTextGrid = (section = {}) => {
   };
 };
 
-/*
-  "image_grid": [
-    {
-      "id": "123",
-      "image": {
-        "id": "456",
-        "name": "https://link.to.image.url",
-        "alternativeText": "your alt text",
-      },
-    }
-  ]
-  Should map each grid element to: alternativeText => altText & name => imgSrc
-*/
-
 export const mapImageGrid = (section = {}) => {
   const {
-    __component: component = 'section.section-grid-image',
+    __component: component = 'section.section-grid-gallery',
     title = '',
     description = '',
     image_grid: grid = [],
@@ -194,7 +109,8 @@ export const mapImageGrid = (section = {}) => {
     title,
     description,
     grid: grid.map((item) => {
-      const {image: { name: imgSrc = '', alternativeText: altText = ''} = ''} = item;
+
+      const { image: { data: { attributes: { alternativeText: altText = '', url: imgSrc = ''}}}} = item;
 
       return {imgSrc, altText};
     }),
@@ -202,3 +118,81 @@ export const mapImageGrid = (section = {}) => {
     sectionId,
   };
 };
+
+/**
+  {
+    "id": 1,
+    "image": {
+      "data": {
+        "id": 2,
+        "attributes": {
+          "name": "2022-10-15 13.46.47 localhost 14045752fefe.jpg",
+          "alternativeText": "homepage screenshot",
+          "caption": null,
+          "width": 1073,
+          "height": 981,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_2022-10-15 13.46.47 localhost 14045752fefe.jpg",
+              "hash": "thumbnail_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 171,
+              "height": 156,
+              "size": 6.87,
+              "sizeInBytes": 6871,
+              "url": "/uploads/thumbnail_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a.jpg"
+            },
+            "small": {
+              "name": "small_2022-10-15 13.46.47 localhost 14045752fefe.jpg",
+              "hash": "small_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 500,
+              "height": 457,
+              "size": 38.07,
+              "sizeInBytes": 38071,
+              "url": "/uploads/small_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a.jpg"
+            },
+            "large": {
+              "name": "large_2022-10-15 13.46.47 localhost 14045752fefe.jpg",
+              "hash": "large_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 1000,
+              "height": 914,
+              "size": 114.86,
+              "sizeInBytes": 114863,
+              "url": "/uploads/large_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a.jpg"
+            },
+            "medium": {
+              "name": "medium_2022-10-15 13.46.47 localhost 14045752fefe.jpg",
+              "hash": "medium_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 750,
+              "height": 686,
+              "size": 74.04,
+              "sizeInBytes": 74038,
+              "url": "/uploads/medium_2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a.jpg"
+            }
+          },
+          "hash": "2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 128.67,
+          "url": "/uploads/2022_10_15_13_46_47_localhost_14045752fefe_7bfdc3a16a.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2024-10-16T18:51:16.603Z",
+          "updatedAt": "2024-11-05T19:16:23.678Z"
+        }
+      }
+    }
+  },
+*/

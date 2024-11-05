@@ -5,7 +5,7 @@
       "title": "Landing Page",
       "slug": "landing-page",
       "createdAt": "2024-10-16T18:55:29.517Z",
-      "updatedAt": "2024-11-04T19:38:58.393Z",
+      "updatedAt": "2024-11-05T19:17:28.313Z",
       "publishedAt": "2024-10-16T18:59:03.805Z",
       "footer_text": [
         {
@@ -114,7 +114,7 @@
                   "id": 2,
                   "attributes": {
                     "name": "2022-10-15 13.46.47 localhost 14045752fefe.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "homepage screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -177,7 +177,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.603Z",
-                    "updatedAt": "2024-10-16T18:51:16.603Z"
+                    "updatedAt": "2024-11-05T19:16:23.678Z"
                   }
                 }
               }
@@ -189,7 +189,7 @@
                   "id": 5,
                   "attributes": {
                     "name": "2022-10-15 13.47.12 localhost f0168046575e.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "blog screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -252,7 +252,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.663Z",
-                    "updatedAt": "2024-10-16T18:51:30.903Z"
+                    "updatedAt": "2024-11-05T19:16:34.537Z"
                   }
                 }
               }
@@ -264,7 +264,7 @@
                   "id": 6,
                   "attributes": {
                     "name": "2022-10-15 13.47.29 localhost 56930ece2307.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "dev home screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -327,7 +327,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.706Z",
-                    "updatedAt": "2024-10-16T18:51:16.706Z"
+                    "updatedAt": "2024-11-05T19:16:43.441Z"
                   }
                 }
               }
@@ -339,7 +339,7 @@
                   "id": 7,
                   "attributes": {
                     "name": "2022-10-15 13.48.37 localhost 9529ab196546.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "dev page screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -402,7 +402,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.730Z",
-                    "updatedAt": "2024-10-16T18:51:16.730Z"
+                    "updatedAt": "2024-11-05T19:16:53.138Z"
                   }
                 }
               }
@@ -414,7 +414,7 @@
                   "id": 3,
                   "attributes": {
                     "name": "2022-10-15 13.47.45 localhost 8234903a110e.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "design home screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -477,7 +477,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.620Z",
-                    "updatedAt": "2024-10-16T18:51:16.620Z"
+                    "updatedAt": "2024-11-05T19:17:05.232Z"
                   }
                 }
               }
@@ -489,7 +489,7 @@
                   "id": 4,
                   "attributes": {
                     "name": "2022-10-15 13.47.57 localhost 5686b3c73c07.jpg",
-                    "alternativeText": null,
+                    "alternativeText": "design home part 2 screenshot",
                     "caption": null,
                     "width": 1073,
                     "height": 981,
@@ -552,7 +552,7 @@
                     "provider": "local",
                     "provider_metadata": null,
                     "createdAt": "2024-10-16T18:51:16.649Z",
-                    "updatedAt": "2024-10-16T18:52:35.594Z"
+                    "updatedAt": "2024-11-05T19:17:25.030Z"
                   }
                 }
               }
