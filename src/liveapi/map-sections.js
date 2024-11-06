@@ -13,7 +13,7 @@ export const mapSections = (sections = []) => {
         return mapTextGrid(section);
       }
     }
-    else if(section.__component === 'section-grid-gallery'){
+    else if(section.__component === 'section.section-grid-gallery'){
       const {image_grid = []} = section;
 
       if(image_grid.length > 0){
@@ -108,14 +108,14 @@ export const mapImageGrid = (section = {}) => {
     component,
     title,
     description,
+    background,
+    sectionId,
     grid: grid.map((item) => {
 
       const { image: { data: { attributes: { alternativeText: altText = '', url: imgSrc = ''}}}} = item;
 
       return {imgSrc, altText};
     }),
-    background,
-    sectionId,
   };
 };
 
