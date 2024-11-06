@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Base } from '../Base';
 import mock from '../Base/mock';
 import { mapData } from '../../liveapi/map-data';
 
 function App() {
+
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const load = async () => {
@@ -13,12 +15,20 @@ function App() {
       const pageData = mapData(jsonData);
       console.log(pageData);
 
-
+      setData(pageData);
 
     }
 
     load();
   }, []);
+
+  if(data === undefined) {
+    return (<h1>Page not found</h1>);
+  }
+
+  if(data && !data.slug) {
+    return (<h1>Loading page...</h1>);
+  }
 
   return (
     <Base {...mock} />
