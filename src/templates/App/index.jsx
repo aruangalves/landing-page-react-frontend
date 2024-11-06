@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Base } from '../Base';
 import mock from '../Base/mock';
 import { mapData } from '../../liveapi/map-data';
+import { PageNotFound } from '../PageNotFound';
 
 function App() {
 
@@ -9,13 +10,19 @@ function App() {
 
   useEffect(() => {
     const load = async () => {
-      const data = await fetch('http://localhost:1337/api/pages/1?populate=deep');
-      const jsonData = await data.json();
-      //console.log(jsonData);
-      const pageData = mapData(jsonData);
-      console.log(pageData);
+      try{
+        const data = await fetch('http://localhost:1337/api/pages/1?populate=deep');
+        const jsonData = await data.json();
+        //console.log(jsonData);
+        const pageData = mapData(jsonData);
+        console.log(pageData);
 
-      setData(pageData);
+        setData(pageData);
+      }
+      catch(error){
+        setData(undefined);
+      }
+
 
     }
 
@@ -23,7 +30,7 @@ function App() {
   }, []);
 
   if(data === undefined) {
-    return (<h1>Page not found</h1>);
+    return (<PageNotFound />);
   }
 
   if(data && !data.slug) {
