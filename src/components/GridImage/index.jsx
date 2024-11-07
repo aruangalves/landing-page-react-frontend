@@ -3,8 +3,13 @@ import * as Styled from './styles';
 import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { TextComponent } from '../TextComponent';
+import { GlobalContext } from '../../contexts/AppContext';
+import { useContext } from 'react';
 
 export const GridImage = ({background = false, title, description, grid}) =>{
+  const context = useContext(GlobalContext);
+  const {apiUrl} = context;
+
   return (
     <SectionBackground background={background}>
       <Styled.Container>
@@ -13,7 +18,7 @@ export const GridImage = ({background = false, title, description, grid}) =>{
         <Styled.ImgGallery>
           {grid.map( el => (
             <Styled.ImgElement key={el.imgSrc}>
-              <Styled.Image src={el.imgSrc} alt={el.altText} />
+              <Styled.Image src={apiUrl +el.imgSrc} alt={el.altText} />
             </Styled.ImgElement>
           ))}
         </Styled.ImgGallery>
