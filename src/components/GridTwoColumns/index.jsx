@@ -3,8 +3,13 @@ import * as Styled from './styles';
 import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { TextComponent } from '../TextComponent';
+import { GlobalContext } from '../../contexts/AppContext';
+import { useContext } from 'react';
 
 export const GridTwoColumns = ({ title, text, imgSrc, background = false}) =>{
+  const context = useContext(GlobalContext);
+  const {apiUrl} = context;
+
   return (
     <SectionBackground background={background}>
       <Styled.Container >
@@ -13,7 +18,7 @@ export const GridTwoColumns = ({ title, text, imgSrc, background = false}) =>{
           <TextComponent>{text}</TextComponent>
         </Styled.TextContainer>
         <Styled.ImageContainer>
-          <Styled.Image src={imgSrc} alt={title} />
+          <Styled.Image src={apiUrl +imgSrc} alt={title} />
         </Styled.ImageContainer>
 
       </Styled.Container>
