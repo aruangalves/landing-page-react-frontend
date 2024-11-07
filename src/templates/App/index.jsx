@@ -3,6 +3,7 @@ import { Base } from '../Base';
 import mock from '../Base/mock';
 import { mapData } from '../../liveapi/map-data';
 import { PageNotFound } from '../PageNotFound';
+import { PageLoading } from '../PageLoading';
 
 function App() {
 
@@ -17,9 +18,17 @@ function App() {
         const pageData = mapData(jsonData);
         console.log(pageData);
 
+        /*await new Promise(resolve => {
+          return setTimeout(() => {
+            setData(pageData);
+            resolve();
+          }, 2500);
+        });*/
+
         setData(pageData);
       }
       catch(error){
+        console.log(error);
         setData(undefined);
       }
 
@@ -34,7 +43,7 @@ function App() {
   }
 
   if(data && !data.slug) {
-    return (<h1>Loading page...</h1>);
+    return (<PageLoading />);
   }
 
   return (
