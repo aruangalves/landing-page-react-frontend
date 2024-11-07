@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AppProvider } from '../../contexts/AppContext';
 import { Base } from '../Base';
 //import mock from '../Base/mock';
 import { mapData } from '../../liveapi/map-data';
@@ -54,22 +55,24 @@ function App() {
   const {imgSrc, link, links, text} = menu;
 
   return (
-    <Base links={links} footerHtml={footerText} logoData={{text, imgSrc, link}}>
-      <title>{title}</title>
-      {sections.map((section, index) => {
-        const key = `${slug}-${index}`;
-        switch(section.component){
-          case 'section.section-two-columns':
-            return (<GridTwoColumns key={key} {...section} />);
-          case 'section.section-content':
-            return (<GridContent key={key} {...section} />);
-          case 'section.section-grid':
-            return (<GridText key={key} {...section} />);
-          case 'section.section-grid-gallery':
-            return (<GridImage key={key} {...section} />);
-        }
-      })}
-    </Base>
+    <AppProvider>
+      <Base links={links} footerHtml={footerText} logoData={{text, imgSrc, link}}>
+        <title>{title}</title>
+        {sections.map((section, index) => {
+          const key = `${slug}-${index}`;
+          switch(section.component){
+            case 'section.section-two-columns':
+              return (<GridTwoColumns key={key} {...section} />);
+            case 'section.section-content':
+              return (<GridContent key={key} {...section} />);
+            case 'section.section-grid':
+              return (<GridText key={key} {...section} />);
+            case 'section.section-grid-gallery':
+              return (<GridImage key={key} {...section} />);
+          }
+        })}
+      </Base>
+    </AppProvider>
   );
 }
 
