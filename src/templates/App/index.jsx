@@ -20,7 +20,7 @@ function App() {
         const jsonData = await data.json();
         //console.log(jsonData);
         const pageData = mapData(jsonData);
-        console.log(pageData);
+        //console.log(pageData);
 
         /*await new Promise(resolve => {
           return setTimeout(() => {
@@ -50,30 +50,27 @@ function App() {
     return (<PageLoading />);
   }
 
-  const {title, menu, sections, footerText } = data;
+  const {title, menu, sections, footerText, slug } = data;
   const {imgSrc, link, links, text} = menu;
 
   return (
     <Base links={links} footerHtml={footerText} logoData={{text, imgSrc, link}}>
       <title>{title}</title>
       {sections.map((section, index) => {
+        const key = `${slug}-${index}`;
         switch(section.component){
           case 'section.section-two-columns':
-            return (<GridTwoColumns title={section.title} text={section.text} imgSrc={section.imgSrc} background={section.background} index={index} />);
+            return (<GridTwoColumns key={key} {...section} />);
           case 'section.section-content':
-            return (<GridContent index={index} background={section.background} htmlcontent={section.htmlcontent} title={section.title} />);
+            return (<GridContent key={key} {...section} />);
           case 'section.section-grid':
-            return (<GridText index={index} background={section.background} description={section.description} title={section.title} grid={section.grid} />);
+            return (<GridText key={key} {...section} />);
           case 'section.section-grid-gallery':
-            return (<GridImage index={index} background={section.background} description={section.description} title={section.title} grid={section.grid} />);
+            return (<GridImage key={key} {...section} />);
         }
       })}
     </Base>
-  )
-
-  /*return (
-    <Base {...mock} />
-  )*/
+  );
 }
 
 export default App
