@@ -4,10 +4,11 @@ export const mapMenu = (menu = {}) => {
     logo: {
       title: text = 'logo',
       link = '#logo',
-      logo: { data: { attributes: { url: imgSrc = '#' }}},
     },
     menu_links: links = [],
   } = menu;
+
+  const imgSrc = menu.logo.logo.data && menu.logo.logo.data.attributes.url ? menu.logo.logo.data.attributes.url : '';
 
   return {
     text,
