@@ -10,14 +10,20 @@ import { GridContent } from '../../components/GridContent';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
 
+import { useLocation } from 'react-router-dom';
+
 function App() {
 
   const [data, setData] = useState({});
+  const location = useLocation();
 
   useEffect(() => {
+    const pathname = location.pathname.replace(/[^a-z0-9-_]/gi,'');
+    const slug = pathname ? pathname: '1';
+
     const load = async () => {
       try{
-        const data = await fetch('http://localhost:1337/api/pages/1?populate=deep');
+        const data = await fetch('http://localhost:1337/api/pages/' +slug +'?populate=deep');
         const jsonData = await data.json();
         //console.log(jsonData);
         const pageData = mapData(jsonData);
