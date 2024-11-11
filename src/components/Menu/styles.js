@@ -7,6 +7,7 @@ const menuVisible = () => css`
 
 export const Container = styled.header`
   ${( props ) => css`
+    position: fixed;
     z-index: 5;
     top: 0;
     left: 0;
@@ -23,7 +24,7 @@ export const Container = styled.header`
     }
 
     @media ${props.theme.media.ltemedium}{
-      position: fixed;
+
       height: 100vh;
       display: grid;
       grid-template-columns: 1fr;

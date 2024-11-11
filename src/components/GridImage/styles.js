@@ -1,7 +1,9 @@
 import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
-  ${(/* props */) => css``};
+  ${( props ) => css`
+    margin-top: ${props.theme.spacings.xhugegap};
+  `};
 `;
 
 export const ImgGallery = styled.div`
