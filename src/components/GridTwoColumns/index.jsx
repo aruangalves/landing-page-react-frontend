@@ -6,12 +6,12 @@ import { TextComponent } from '../TextComponent';
 import { GlobalContext } from '../../contexts/AppContext';
 import { useContext } from 'react';
 
-export const GridTwoColumns = ({ title, text, imgSrc, background = false}) =>{
+export const GridTwoColumns = ({ title, text, imgSrc, background = false, sectionId = ''}) =>{
   const context = useContext(GlobalContext);
   const {apiUrl} = context;
 
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container >
         <Styled.TextContainer>
           <Heading darkColor={background} uppercase={true} as='h2'>{title} </Heading>
@@ -31,4 +31,5 @@ GridTwoColumns.propTypes = {
   text: P.string.isRequired,
   imgSrc: P.string.isRequired,
   background: P.bool,
+  sectionId: P.string,
 };

@@ -6,12 +6,12 @@ import { TextComponent } from '../TextComponent';
 import { GlobalContext } from '../../contexts/AppContext';
 import { useContext } from 'react';
 
-export const GridImage = ({background = false, title, description, grid}) =>{
+export const GridImage = ({background = false, title, description, grid, sectionId=''}) =>{
   const context = useContext(GlobalContext);
   const {apiUrl} = context;
 
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading darkColor={background} as='h2' uppercase>{title}</Heading>
         <TextComponent>{description}</TextComponent>
@@ -37,4 +37,5 @@ GridImage.propTypes = {
       imgSrc: P.string,
     })
   ).isRequired,
+  sectionId: P.string,
 };
