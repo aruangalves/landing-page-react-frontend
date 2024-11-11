@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import { AppProvider } from '../../contexts/AppContext';
 import { Base } from '../Base';
 //import mock from '../Base/mock';
@@ -11,8 +11,10 @@ import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
 
 import { useLocation } from 'react-router-dom';
+import { globalData } from '../../contexts/AppContext';
 
 function App() {
+  const {apiUrl} = globalData;
 
   const [data, setData] = useState({});
   const location = useLocation();
@@ -23,7 +25,7 @@ function App() {
 
     const load = async () => {
       try{
-        const data = await fetch('http://localhost:1337/api/pages/' +slug +'?populate=deep');
+        const data = await fetch(apiUrl +'/api/pages/' +slug +'?populate=deep');
         const jsonData = await data.json();
         //console.log(jsonData);
         const pageData = mapData(jsonData);
@@ -47,7 +49,7 @@ function App() {
     }
 
     load();
-  }, [location.pathname]);
+  }, [location.pathname, apiUrl]);
 
   if(data === undefined) {
     return (<PageNotFound />);
