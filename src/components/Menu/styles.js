@@ -19,7 +19,7 @@ export const Container = styled.header`
     transition: opacity 300ms ease-in-out;
 
     & H1{
-      margin: 0 auto;
+      margin: auto 0;
     }
 
     @media ${props.theme.media.ltemedium}{

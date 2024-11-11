@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
-  ${(/* props */) => css`
+  ${(/*props*/) => css`
     text-align: center;
     max-width: 58rem;
     margin: 0 auto;

@@ -34,4 +34,9 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: ${({theme}) => theme.colors.secondaryColor};
   }
+
+  .responsive-table{
+    width: 100%;
+    overflow-x: auto;
+  }
 `;
